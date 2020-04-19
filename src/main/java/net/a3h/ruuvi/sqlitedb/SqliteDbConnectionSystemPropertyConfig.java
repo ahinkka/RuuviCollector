@@ -14,8 +14,4 @@ public class SqliteDbConnectionSystemPropertyConfig {
         }
         return result;
     }
-
-    private static boolean isBlank(String value) {
-        return value == null || value.trim().length() == 0;
-    }
 }
