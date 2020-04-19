@@ -59,7 +59,6 @@ public class SqliteDbConnection implements DBConnection {
         Connection connection,
         EnhancedRuuviMeasurement measurement
     ) throws SQLException {
-
         PreparedStatement result = connection.prepareStatement(
             "INSERT INTO measurement (" +
                 "recorded_at, sensor, temperature, pressure, humidity," +
@@ -96,6 +95,5 @@ public class SqliteDbConnection implements DBConnection {
 
     @Override
     public void close() {
-
     }
 }
