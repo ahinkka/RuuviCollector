@@ -53,6 +53,8 @@ public class SqliteDbConnection implements DBConnection {
             }
         }
         statement.close();
+
+        connection.close();
     }
 
     private static PreparedStatement prepareStatement(
