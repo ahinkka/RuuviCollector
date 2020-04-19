@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS measurement (
   sensor TEXT NOT NULL,
   temperature REAL,
   pressure REAL,
+  humidity REAL,
   acceleration_x REAL,
   acceleration_y REAL,
   acceleration_z REAL,

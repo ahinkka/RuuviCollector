@@ -62,10 +62,10 @@ public class SqliteDbConnection implements DBConnection {
 
         PreparedStatement result = connection.prepareStatement(
             "INSERT INTO measurement (" +
-                "recorded_at, sensor, temperature, pressure," +
+                "recorded_at, sensor, temperature, pressure, humidity," +
                 "acceleration_x, acceleration_y, acceleration_z," +
                 "battery_voltage, tx_power, movement_counter, measurement_sequence_number)" +
-                "VALUES (?, ?, ?, ?," +
+                "VALUES (?, ?, ?, ?, ?," +
                 "?, ?, ?," +
                 "?, ?, ?, ?)"
         );
@@ -78,15 +78,16 @@ public class SqliteDbConnection implements DBConnection {
         result.setString(2, measurement.getMac());
         result.setDouble(3, measurement.getTemperature());
         result.setDouble(4, measurement.getPressure());
+        result.setDouble(5, measurement.getHumidity());
 
-        result.setDouble(5, measurement.getAccelerationX());
-        result.setDouble(6, measurement.getAccelerationY());
-        result.setDouble(7, measurement.getAccelerationZ());
+        result.setDouble(6, measurement.getAccelerationX());
+        result.setDouble(7, measurement.getAccelerationY());
+        result.setDouble(8, measurement.getAccelerationZ());
 
-        result.setDouble(8, measurement.getBatteryVoltage());
-        result.setDouble(9, measurement.getTxPower());
-        result.setInt(10, measurement.getMovementCounter());
-        result.setInt(11, measurement.getMeasurementSequenceNumber());
+        result.setDouble(9, measurement.getBatteryVoltage());
+        result.setDouble(10, measurement.getTxPower());
+        result.setInt(11, measurement.getMovementCounter());
+        result.setInt(12, measurement.getMeasurementSequenceNumber());
 
         result.setQueryTimeout(5);
 
